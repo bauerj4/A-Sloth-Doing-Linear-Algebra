@@ -163,7 +163,7 @@ Matrix<T> operator-(Matrix<T> const& firstMatrix, Matrix<T> const &secondMatrix)
 
 
 // Compile from template
-Matrix<float>  MAT_FILL_FLOAT(1,1);
-Matrix<double> MAT_FILL_DOUBLE(1,1);
+extern Matrix<float>  MAT_FILL_FLOAT;
+extern Matrix<double> MAT_FILL_DOUBLE;
 
 #endif
