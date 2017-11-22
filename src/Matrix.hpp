@@ -4,6 +4,7 @@
 #include <iostream>
 #include <thread>
 #include <omp.h>
+//#include "Multiply.hpp"
 
 /*
   Define the class template for a matrix.
@@ -81,7 +82,7 @@ public:
 */
 
 template <class T>
-Matrix<T>  operator+(Matrix<T>  const& firstMatrix, Matrix<T>  const& secondMatrix){
+Matrix<T>  operator+(Matrix<T>  & firstMatrix, Matrix<T>  & secondMatrix){
   if (firstMatrix.nRows != secondMatrix.nRows ||
       firstMatrix.nCols != secondMatrix.nCols){
     std::cout << "Incompatible dimensions for addition. Exiting. " << std::endl;
@@ -112,6 +113,7 @@ Matrix<T>  operator+(Matrix<T>  const& firstMatrix, Matrix<T>  const& secondMatr
   return res;
 }
 
+template <class T> void NaiveMatrixMultiplySerial(Matrix<T> &a, Matrix<T> &b, Matrix<T> &c);
 
 /*
   The subtraction operator. Performs dimension check
@@ -155,11 +157,30 @@ Matrix<T> operator-(Matrix<T> const& firstMatrix, Matrix<T> const &secondMatrix)
 }
 
 
+
 /*
   Performs matrix multiplication. By default, we consider the Strassen
   algorithm with a globally specified minimum block size. A block size
   larger than the matrix will just result in naive matrix multiplication.
 */
+
+template <class T>
+Matrix<T> operator*(Matrix<T> &firstMatrix, Matrix<T> &secondMatrix){
+
+  T ** resultData;
+  resultData = new T*[firstMatrix.nRows];
+  for (int i = 0; i < firstMatrix.nRows; i++){
+    resultData[i] = new T [secondMatrix.nCols];
+  }
+
+  auto thirdMatrix = Matrix<T>(firstMatrix.nRows, secondMatrix.nCols);
+  NaiveMatrixMultiplySerial<T>(firstMatrix, secondMatrix, thirdMatrix);
+
+  return thirdMatrix;
+
+}
+
+
 
 
 // Compile from template

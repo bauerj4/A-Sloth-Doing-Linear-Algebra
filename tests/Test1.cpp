@@ -1,4 +1,4 @@
-#include "../include/Matrix.hpp"
+#include "../src/Matrix.hpp"
 
 /*
   This program performs some tests for our

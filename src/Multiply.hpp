@@ -1,7 +1,11 @@
-#include "../include/Matrix.hpp"
-#include "../include/Multiply.hpp"
+#ifndef __MULTIPLY_HPP__
+#define __MULTIPLY_HPP__
+
+
+#include "Matrix.hpp"
 #include <iostream>
 
+//template <class T> void NaiveMatrixMultiplySerial(Matrix<T> &a, Matrix<T> &b, Matrix<T> &c);
 template <class T> void NaiveMatrixMultiplySerial(Matrix<T> &a, Matrix<T> &b, Matrix<T> &c){
 
   if (c.nRows != a.nRows || c.nCols != b.nCols || a.nCols != b.nRows){
@@ -21,3 +25,5 @@ template <class T> void NaiveMatrixMultiplySerial(Matrix<T> &a, Matrix<T> &b, Ma
     }
   }
 }
+
+#endif

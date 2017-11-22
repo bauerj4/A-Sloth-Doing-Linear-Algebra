@@ -45,7 +45,7 @@ for line in config_file:
 #print types
 
 config_file.close()
-header = open("./include/LinAlgOptions.hpp",'w')
+header = open("./src/LinAlgOptions.hpp",'w')
 i_max = len(values)
 i=0
 
