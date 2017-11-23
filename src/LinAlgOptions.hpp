@@ -1,1 +1,2 @@
-#define STRASSEN_MIN_DIM 2
+#define OPEN_MP 1
+#define STRASSEN_MIN_DIM 512

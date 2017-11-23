@@ -2,7 +2,7 @@
 #define __SPECIALMATRICES_HPP__
 
 #include "Matrix.hpp"
-#include "SpecialMatrices.hpp"
+//#include "SpecialMatrices.hpp"
 #include <time.h>
 #include <stdlib.h>
 
