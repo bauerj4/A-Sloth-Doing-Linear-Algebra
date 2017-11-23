@@ -167,6 +167,9 @@ Matrix<T>  operator+(Matrix<T>  & firstMatrix, Matrix<T>  & secondMatrix){
   }
 
 
+#ifdef OPEN_MP
+#pragma omp parallel for
+#endif
   for (long i = 0; i < n; i++){
     for (long j = 0; j < m; j++){
       resultData[i][j] = firstMatrix.data[i][j] + secondMatrix.data[i][j];
@@ -217,6 +220,9 @@ Matrix<T> operator-(Matrix<T> const& firstMatrix, Matrix<T> const &secondMatrix)
     resultData[i] = new T [m];
   }
 
+#ifdef OPEN_MP
+#pragma omp parallel for
+#endif
 
   for (long i = 0; i < n; i++){
     for (long j = 0; j < m; j++){

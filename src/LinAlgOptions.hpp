@@ -1,2 +1,2 @@
 #define OPEN_MP 1
-#define STRASSEN_MIN_DIM 512
+#define STRASSEN_MIN_DIM 256
