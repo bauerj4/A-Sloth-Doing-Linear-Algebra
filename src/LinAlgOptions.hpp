@@ -1,0 +1,1 @@
+#define STRASSEN_MIN_DIM 2

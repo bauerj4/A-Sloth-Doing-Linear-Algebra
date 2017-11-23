@@ -25,14 +25,19 @@ void Test0(){
   auto A = Matrix<float>(5,5,a);
   auto B = A * A;
   auto I = Identity<float>((const long)5);
-  
-  I.Print();
+
   A.Print();
   B.Print();
+  //I.Print();
+  //A.Print();
+  //B.Print();
 
   /*
     Generate simple matrix
   */
 
+  Matrix<float> C(5,5);
 
+  StrassenMatrixMultiplySerial(A,A,C);
+  C.Print();
 }
