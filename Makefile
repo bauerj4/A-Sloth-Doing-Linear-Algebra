@@ -1,4 +1,4 @@
-B1;2802;0cCONFIG   =  Config.sh
+CONFIG   =  Config.sh
 PYTHON   =  /usr/bin/python
 CPPFLAGS = -Wall -O4 --std=c++14 -fopenmp
 CXX      = g++-5
